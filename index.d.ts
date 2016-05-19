@@ -2400,6 +2400,41 @@ declare module sequelize {
     afterInit(name: string, fn: (sequelize: Connection) => void): void;
     afterInit(fn: (sequelize: Connection) => void): void;
 
+    /**
+     * A hook that is run before Model.sync call
+     * @param {String}   name
+     * @param {Function} fn   A callback function that is called with options passed to Model.sync
+     * @name beforeSync
+     */
+    beforeSync(name: string, fn: (config: Object, options: Object) => void): void;
+    beforeSync(fn: (config: Object, options: Object) => void): void;
+
+    /**
+     * A hook that is run after Model.sync call
+     * @param {String}   name
+     * @param {Function} fn   A callback function that is called with options passed to Model.sync
+     * @name afterSync
+     */
+    afterSync(name: string, fn: (sequelize: Connection) => void): void;
+    afterSync(fn: (sequelize: Connection) => void): void;
+
+    /**
+     * A hook that is run before sequelize.sync call
+     * @param {String}   name
+     * @param {Function} fn   A callback function that is called with options passed to sequelize.sync
+     * @name beforeBulkSync
+     */
+    beforeBulkSync(name: string, fn: (config: Object, options: Object) => void): void;
+    beforeBulkSync(fn: (config: Object, options: Object) => void): void;
+
+    /**
+     * A hook that is run after sequelize.sync call
+     * @param {String}   name
+     * @param {Function} fn   A callback function that is called with options passed to sequelize.sync
+     * @name afterBulkSync
+     */
+    afterBulkSync(name: string, fn: (sequelize: Connection) => void): void;
+    afterBulkSync(fn: (sequelize: Connection) => void): void;
   }
 
   //
