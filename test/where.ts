@@ -115,7 +115,6 @@ Model.update({ hi: 1 }, { where });
 
 // From http://docs.sequelizejs.com/en/v3/docs/models-usage/
 
-
 // find multiple entries
 Model.findAll().then(function(projects) {
   // projects will be an array of all Model instances
@@ -137,7 +136,7 @@ Model.findAll({ where: ['id > ?', 25] }).then(function(projects) {
 });
 
 // search within a specific range
-Model.findAll({ where: { id: [1,2,3] } }).then(function(projects) {
+Model.findAll({ where: { id: [1, 2, 3] } }).then(function(projects) {
   // projects will be an array of Models having the id 1, 2 or 3
   // this is actually doing an IN query
 });

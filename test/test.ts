@@ -2,15 +2,15 @@ import * as Sequelize from 'sequelize';
 
 const sequelize = new Sequelize('str');
 
-var s: Sequelize.Connection;
-var e: typeof Sequelize.Error;
+let s: Sequelize.Connection;
+let e: typeof Sequelize.Error;
 
-var v: typeof Sequelize.Validator;
-var qt: typeof Sequelize.QueryTypes;
-var dt: Sequelize.DataTypes;
+let v: typeof Sequelize.Validator;
+let qt: typeof Sequelize.QueryTypes;
+let dt: Sequelize.DataTypes;
 // var dt: typeof Sequelize.DataTypes; // Should give an error. It's not a value but an interface.
 
-var i: typeof Sequelize.Instance;
+let i: typeof Sequelize.Instance;
 
 const Something = sequelize.define('', {});
 const User = sequelize.define('', {});
@@ -39,19 +39,19 @@ Something.findOne({
     // Will order by name on a nested associated Company of an associated User
     [User, Company, 'name', 'DESC']
   ]
-})
+});
 
 Something.findOne({
   order: 'convert(user_name using gbk)'
-})
+});
 
 Something.findOne({
   order: 'username DESC'
-})
+});
 
 Something.findOne({
   order: sequelize.literal('convert(user_name using gbk)')
-})
+});
 
 Something.findAll({
     include: [{
@@ -61,8 +61,8 @@ Something.findAll({
         separate: true,
         order: [['id', 'DESC']]
     }]
-})
+});
 
 Something.findAndCountAll({
   distinct: true
-})
+});

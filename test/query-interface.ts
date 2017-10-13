@@ -23,7 +23,7 @@ queryInterface.createTable(
       defaultValue: false,
       allowNull: false
     },
-    //foreign key usage
+    // foreign key usage
     attr4: {
         type: Sequelize.INTEGER,
         references: {
@@ -46,12 +46,12 @@ queryInterface.dropAllTables();
 
 queryInterface.renameTable('Person', 'User');
 
-queryInterface.showAllTables().then(function(tableNames) {})
+queryInterface.showAllTables().then(function(tableNames) { return; });
 
 queryInterface.describeTable('Person').then(function(attributes) {
   /*
     attributes will be something like:
- 
+
     {
       name: {
         type:         'VARCHAR(255)', // this will be 'CHARACTER VARYING' for pg!
@@ -72,9 +72,9 @@ queryInterface.addColumn(
   'nameOfTheNewAttribute',
   Sequelize.STRING
 );
- 
+
 // or
- 
+
 queryInterface.addColumn(
   'nameOfAnExistingTable',
   'nameOfTheNewAttribute',

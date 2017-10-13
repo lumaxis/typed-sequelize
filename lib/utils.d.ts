@@ -21,8 +21,8 @@ import parameterValidator = require('./utils/parameter-validator');
 
 export type Primitive = 'string'|'number'|'boolean';
 
-export function camelizeIf(string: string, condition?: boolean): string;
-export function underscoredIf(string: string, condition?: boolean): string;
+export function camelizeIf(stringValue: string, condition?: boolean): string;
+export function underscoredIf(stringValue: string, condition?: boolean): string;
 export function isPrimitive(val: any): val is Primitive;
 
 /** Same concept as _.merge, but don't overwrite properties that have already been assigned */
@@ -55,7 +55,6 @@ export function pluralize(s: string): string;
 
 export function removeCommentsFromFunctionString(s: string): string;
 export function toDefaultValue(value: any): any;
-
 
 /**
  * Determine if the default value provided exists and can be described

@@ -214,24 +214,23 @@ export interface BigIntDataTypeOptions {
  *
  * @property FLOAT
  */
- export const FLOAT: FloatDataTypeConstructor;
+export const FLOAT: FloatDataTypeConstructor;
 
- interface FloatDataTypeConstructor extends NumberDataTypeConstructor {
+interface FloatDataTypeConstructor extends NumberDataTypeConstructor {
    new (length?: number, decimals?: number): FloatDataType;
    new (options?: FloatDataTypeOptions): FloatDataType;
    (length?: number, decimals?: number): FloatDataType;
    (options?: FloatDataTypeOptions): FloatDataType;
  }
 
- export interface FloatDataType extends NumberDataType {
+export interface FloatDataType extends NumberDataType {
    options: FloatDataTypeOptions;
  }
 
- export interface FloatDataTypeOptions {
+export interface FloatDataTypeOptions {
    length?: number;
    decimals?: number;
  }
-
 
  /**
   * Floating point number (4-byte precision). Accepts one or two arguments for precision
@@ -257,7 +256,6 @@ export interface RealDataTypeOptions {
   length?: number;
   decimals?: number;
 }
-
 
 /**
  * Floating point number (8-byte precision). Accepts one or two arguments for precision
